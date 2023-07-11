@@ -1,0 +1,45 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body
+{
+    padding:10px;
+}
+
+input
+{
+    border:1px solid lightgray;
+    height: 30px;
+    width:50%;
+    border-radius: 6px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+input:focus
+{
+    outline:none;
+    border:1px solid #9495df;
+}
+
+button
+{
+    background-color: #3c37ff;
+    border:none;
+    color:white;
+    padding:10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+input[type='radio']
+{
+    width:15px;
+    height:15px;
+}
