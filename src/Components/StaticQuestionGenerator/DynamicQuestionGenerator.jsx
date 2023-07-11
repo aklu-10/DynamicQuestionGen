@@ -1,5 +1,7 @@
 import React, {useState, memo} from 'react'
 import Question from '../Question/Question';
+import Input from '../Input/Input';
+import Label from '../Label/Label';
 
 const DynamicQuestionGenerator = () => {
 
@@ -32,8 +34,19 @@ const DynamicQuestionGenerator = () => {
         <div>
             
             <div>
-                <label>Static Question : </label>
-                <input type='number' value={numOfStaticQuestion} placeholder='Type number of questions' onChange={(e)=>setNumOfStaticQuestion(e.target.value)}/>
+
+                <Label labelFor="NumOfStaticQuestion" labelData="Dynamic Question :"/>
+
+                <Input 
+                    name="NumOfStaticQuestion"
+                    fieldType="number" 
+                    fieldValue={numOfStaticQuestion} 
+                    fieldPlaceHolder="Type number of questions" 
+                    onFieldChange={(e)=>setNumOfStaticQuestion(e.target.value)}
+                    pattern='^[0-9]\d*$'
+                    fieldErrorMessage="Must be a positive number or zero"
+                />
+
             </div>
             
             {

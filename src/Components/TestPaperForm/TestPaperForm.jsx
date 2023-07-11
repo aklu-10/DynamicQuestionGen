@@ -1,5 +1,5 @@
 import React from 'react'
-import DynamicQuestionGenerator from '../StaticQuestionGenerator/StaticQuestionGenerator';
+import DynamicQuestionGenerator from '../StaticQuestionGenerator/DynamicQuestionGenerator';
 
 const TestPaperForm = () => {
 

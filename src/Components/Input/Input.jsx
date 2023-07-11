@@ -1,16 +1,26 @@
-import React,{memo} from 'react'
+import React, { useState } from 'react'
 
-const Input = ({type, label, regexp, fieldMessage}) => {
+const Input = ({name, fieldType, fieldValue, fieldPlaceHolder, onFieldChange, pattern, fieldErrorMessage}) => {
+
+    const [isValidPattern, setIsValidPattern] = useState(null);   
+
+    function handleChange(e)
+    {
+        onFieldChange(e);
+        setIsValidPattern(new RegExp(pattern).test(e.target.value))
+    }
 
     return (
+        
         <>
+            <input type={fieldType} value={fieldValue} placeholder={fieldPlaceHolder} onChange={handleChange} id={name}/>
             {
-                label && <label>{label}</label>
+                (isValidPattern!=null) &&
+                !isValidPattern && 
+                <span>{fieldErrorMessage}</span>
             }
-            <input type={type} pattern={regexp}/>
-            <span className='fieldMsg'>{fieldMessage}</span>
         </>
     )
 }
 
-export default memo(Input)
+export default Input
